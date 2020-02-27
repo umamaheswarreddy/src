@@ -1,0 +1,43 @@
+<h1>{{isNew?"New" :"Edit"}} Employee</h1>
+<div *ngIf="msg">
+    <p>{{msg}}</p>
+</div>
+
+<form (ngSubmit)="save()">
+   <div>
+       <label>firstName</label>
+       <input type="text" name=fnm [(ngModel)]="emp.firstName">
+   </div>
+
+   <div>
+    <label>lastName</label>
+    <input type="text" name=lnm [(ngModel)]="emp.lastName">
+  </div>
+
+  <div>
+    <label>joinDate</label>
+    <input type="date" name=jod [(ngModel)]="emp.joinDate">
+  </div>
+
+  <div>
+    <label>basic</label>
+    <input type="number" name=basic [(ngModel)]="emp.basic">
+  </div>
+
+  <div>
+    <label>department</label>
+    <input type="text" name=dept [(ngModel)]="emp.dept">
+  </div>
+
+  <div>
+    <label>mobileNumber</label>
+    <input type="text" name=mob [(ngModel)]="emp.mobileNumber">
+  </div>
+
+  <div>
+    <label>Email</label>
+    <input type="email" name=email [(ngModel)]="emp.email">
+  </div>
+
+    <button >SAVE</button>
+</form>

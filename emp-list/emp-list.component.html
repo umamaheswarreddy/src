@@ -1,0 +1,38 @@
+<h2>
+    Employee List
+</h2>
+<h1><a routerLink="addEmp">Add New emp</a></h1>
+<p *ngIf="!emps">please wait loading</p>
+
+<table *ngIf="emps" colspan="2" rowspacing="2">
+   <thead>
+   <tr>
+    <th>Emp#</th>
+    <th>name</th>
+    <th>joinDate</th>
+    <th>basic</th>
+    <th>mobilenumber</th>
+    <th>Email</th>
+    <th>ACTIONS</th>
+
+ </tr>  
+</thead> 
+ <tbody>
+     <tr *ngFor="let e of emps">
+         <td>{{e.empId}}</td>
+         <td>{{e.firstName}}{{e.lastName}}</td>
+         <td>{{e.joinDate}}</td>
+         <td>{{e.basic}}</td>
+         <td>{{e.mobileNumber}}</td>
+         <td>{{e.email}}</td>
+         <td>
+             <a href="#" (click)="delete(e.empId)">DELETE</a>
+             <span> |  </span>
+             <a routerLink="editEmp/{{e.empId}}">EDIT</a>
+
+
+        </td>
+     </tr>
+ </tbody>
+
+</table>
